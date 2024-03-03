@@ -1,28 +1,6 @@
 {
-  "name": "srilankaol",
-  "version": "1.0.0",
-  "description": "在线策略文字冒险游戏",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wpcwzy/SriLankaOL.git"
-  },
-  "keywords": [
-    "game",
-    "online",
-    "game"
-  ],
-  "author": "wpcwzy",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/wpcwzy/SriLankaOL/issues"
-  },
-  "homepage": "https://github.com/wpcwzy/SriLankaOL#readme",
   "dependencies": {
-    "express": "^4.18.2",
-    "socket.io": "^4.7.1"
+    "express": "^4.18.3",
+    "socket.io": "^4.7.4"
   }
 }

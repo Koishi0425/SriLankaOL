@@ -1,61 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>斯里兰卡OL</title>
-        <!-- 引入socket.io -->
-        <script src="/socket.io/socket.io.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
-        <script src="index.js"></script>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
-        <link rel="stylesheet" href="index.css">
-    </head>
-    <body>
-        <nav>
-            <span style="position:relative;top:10px;">斯里兰卡OL</span>
-
-            <input id="bmenub" type="checkbox" class="show">
-            <label for="bmenub" class="burger pseudo button">菜单</label>
-
-            <div class="menu">
-                <a href="#" class="pseudo button" id="admin_btn" onclick="click_admin()">管理员</a>
-                <a href="#" class="pseudo button" onclick="click_chat()">主页</a>
-                <a href="#" class="pseudo button" onclick="click_map()">地图</a>
-                <a href="#" class="button" id="setid_btn" onclick="click_setid()">设置ID</a>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/vue/dist/vue.js"></script>
+    <title>斯里兰卡OL</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <script src="/socket.io/socket.io.js"></script>
+    <div class="navbar">
+        <!-- 玩家信息和资源 -->
+        <div class="player-info">
+            <span class="player-id">玩家ID: --</span>
+            <span class="resources">金币: </span>
+            <span class="resources money">--</span>
+            <span class="resources">石材: </span>
+            <span class="resources rock">--</span>
+        </div>
+    </div>
+    <div class="main-content">
+        <div id="tab-content">
+            <div class="tab" id="map-tab">
+                <!-- 地图内容 -->
+                地图标签页内容
             </div>
-        </nav>
-        <main style="position:absolute;left:0;right:0;top:50px;bottom:0;">
-            <div class="flex two chat">
-                <div class="chat_user_list">
-                </div>
-                <div class="chat_main" style="max-height: 500px;">
-                    <pre class="chat_history" style="max-height:100%;overflow-y: auto;white-space:normal">
-                    </pre>
-                    <div class="chat_send_area">
-                        <input class="chat_content">
-                        <button onclick="click_sendmsg()">Send</button>
-                    </span>
-                    </div>
-                </div>
-                <div class="stat">
-                    <em>统计信息：</em><br>
-                    <div class="stat_data">
-                        瘦肉：123<br>
-                        鸟蛋：321<br>
-                        铁：321<br>
-                        兵力：114514<br>
-                    </div>
-                </div>
+            <div class="tab" id="bag-tab" style="display: none;">
+                <!-- 背包内容 -->
+                背包标签页内容
             </div>
-            <div class="map">
-                    123
+            <div id="login-tab">
+                <input type="text" id="login-id" placeholder="请输入您的ID进行登录">
+                <button id="login-btn">登录</button>
+            </div>            
+        </div>
+        <!-- 聊天区域 -->
+        <div class="chat-area" id="chat-area" style="display:none;">
+            <div class="chat-messages" id="chat-messages"></div>
+            <div class="chat-input-area">
+                <textarea type="text" id="chat-input" placeholder="输入消息..."></textarea>
+                <button id="send-btn">发送</button>
+                <input type="file" id="upload-btn">
+                <label for="upload-btn">上传文件</label>
             </div>
-            <div class="admin">
-                    <button>A</button>
-                    <button>B</button>
-                    <button>C</button>
-                    <button>D</button>
-            </div>
-        </main>
-    </body>
+        </div>
+    </div>
+    <div class="control-panel">
+        <button id="map-btn">地图</button>
+        <button id="bag-btn">背包</button>
+    </div>
+    <script src="script.js"></script>
+</body>
 </html>
