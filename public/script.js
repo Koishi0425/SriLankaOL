@@ -13,6 +13,13 @@ document.addEventListener('DOMContentLoaded', function() {
     var chatMessages = document.getElementById('chat-messages');
     var sendBtn = document.getElementById('send-btn');
     var uploadBtn = document.getElementById('upload-btn');
+    var adminIDs = ['glamorgan', 'wpcwzy'];
+
+    document.getElementById('login-id').addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            loginBtn.click(); // 触发登录按钮的点击事件
+        }
+    });
 
     // 登录逻辑
     loginBtn.addEventListener('click', function() {
@@ -24,6 +31,11 @@ document.addEventListener('DOMContentLoaded', function() {
             mapTab.style.display = 'block'; // 默认显示地图区域或根据需求调整
             chatArea.style.display = 'block';
             playerIdSpan.textContent = '玩家ID: ' + loginId;
+        }
+        if (adminIDs.includes(loginId)) {
+            document.getElementById('admin-panel').style.display = 'block'; // 显示管理员面板
+        } else {
+            document.getElementById('admin-panel').style.display = 'none'; // 隐藏管理员面板
         }
     });
 
@@ -73,3 +85,4 @@ document.addEventListener('DOMContentLoaded', function() {
         chatMessages.scrollTop = chatMessages.scrollHeight; // 滚动到最新的消息
     });
 });
+

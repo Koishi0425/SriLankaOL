@@ -1,5 +1,3 @@
-/* styles.css */
-
 /* 整体布局风格 */
 body {
     font-family: Arial, sans-serif;
@@ -10,20 +8,20 @@ body {
     height: 100vh;
 }
 
-.navbar {
+.navbar, .control-panel {
     display: flex;
     align-items: center;
+    padding: 10px;
     background-color: #333;
     color: white;
-    padding: 10px;
 }
 
-.player-info {
+.player-info, .chat-input-area {
     display: flex;
     align-items: center;
 }
 
-.player-info > .player-id {
+.player-info > .player-id, .resources {
     margin-right: 20px;
     font-weight: bold;
 }
@@ -32,56 +30,39 @@ body {
     margin-right: 10px;
 }
 
-#map-tab {
+#map-tab, #bag-tab, .chat-area {
+    display: none;
     background-color: rgba(64, 42, 42, 0.2);
     height: 100%;
 }
 
 #bag-tab {
     background-color: rgba(91, 81, 150, 0.2);
-    height: 100%;
 }
 
 .main-content {
-    flex: 1; /* 确保主内容区域填充剩余空间 */
+    flex: 1;
     display: flex;
     padding: 10px;
-    /* 如果您还没有设置主内容区域的最小高度，您可以像这样设置 */
-    min-height: 500px; /* 或者其他您期望的值 */
+    min-height: 500px; /* 根据您的布局需要可能调整 */
 }
 
 #tab-content {
-    flex: 1; /* 确保标签内容区域填充剩余空间 */
-    min-height: 400px;
-    width: 100%;
-}
-
-/* 标签页样式 */
-.tab {
-    display: none; /* 默认不显示 */
-}
-
-/* 当前激活的标签页 */
-.tab.active {
-    display: block; /* 显示当前激活的标签页 */
-}
-
-#map-tab, #bag-tab, .chat-area {
-    display: none; /* 默认隐藏这些区域 */
-}
-
-/* logintab的美化 */
-
-
-/* 聊天区域的样式 */
-.chat-area {
-    flex: 0.3;
+    flex: 0.8;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    margin-right: 10px;
 }
 
-/* 聊天信息显示区的样式 */
+.tab.active {
+    display: block;
+}
+
+.chat-area {
+    flex: 0.3;
+    flex-direction: column;
+}
+
 .chat-messages {
     flex: 1;
     overflow-y: auto;
@@ -92,26 +73,17 @@ body {
     height: 70%;
 }
 
-/* 文字输入和按钮区域的样式 */
-.chat-input-area {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-}
-
-/* 输入框的样式 */
 #chat-input {
     flex-grow: 1;
     padding: 10px;
     margin-right: 10px;
     border: 1px solid #ccc;
-    resize: vertical; /* 允许垂直调整大小，或者使用none禁止调整大小 */
-    height: 100px; /* 初始高度，根据需要调整 */
-    overflow-y: auto; /* 在内容超出高度时显示滚动条 */
+    resize: vertical;
+    height: 100px;
+    overflow-y: auto;
 }
 
-/* 发送按钮的样式 */
-#send-btn {
+#send-btn, button {
     padding: 10px 20px;
     background-color: #5cb85c;
     color: white;
@@ -123,28 +95,8 @@ body {
     background-color: #4cae4c;
 }
 
-/* 上传按钮的样式 */
-.upload-btn-label img {
-    height: 24px;
-    cursor: pointer;
-}
-
-.control-panel {
-    background-color: #666;
-    color: white;
-    padding: 10px 0;
-    display: flex;
-    justify-content: center;
-}
-
-/* 按钮样式 */
 button {
     background-color: #555;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 0 5px;
-    cursor: pointer;
 }
 
 button:hover {
@@ -156,8 +108,7 @@ button:hover {
     max-width: 100px;
 }
 
-/* 滚动条样式 */
-
+/* 优化滚动条样式 */
 .event-log-area::-webkit-scrollbar {
     width: 10px;
 }
